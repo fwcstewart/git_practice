@@ -171,3 +171,50 @@ h1 {
 .submit:active {
   background-color: #06b;
 }
+
+/* Tooltip container */
+.input-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+  
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you hover over the tooltip container */
+.input-container:hover .tooltip,
+.input-container:focus-within .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
