@@ -150,7 +150,7 @@ h1 {
 }
 
 .input:focus ~ .placeholder {
-  color: #dc2f55;
+  color: #00FFB2;
 }
 
 .submit {
