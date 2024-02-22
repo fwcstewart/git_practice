@@ -1,17 +1,18 @@
 * {
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-#quoteDisplay {
-    border-radius: 6px;
-    width: 18px;
-    background-color: blue;
-    color: white;
+    font-family: "Rubik", sans-serif;
 }
 
 body {
   background-color: rgb(57, 169, 219);
   font-family: Rubik, Arial;
+}
+
+#quoteBlock {
+  text-align: center;
+}
+
+#quoteDisplay {
+   
 }
 
 form {
