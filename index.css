@@ -1,89 +1,61 @@
 * {
-    font-family: "Rubik", sans-serif;
+  font-family: "Rubik", sans-serif;
 }
 
 body {
-  align-items: center;
-  background-color: #08d;
-  display: flex;
-  justify-content: center;
-  height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+height: 100vh;
+margin: 0;
+background-color: #08d;
 }
-
 
 #quoteBlock {
-  text-align: center;
-}
-
-#quoteDisplay {
-   
+text-align: center;
 }
 
 .form {
-  background-color: #15172b;
-  border-radius: 20px;
-  box-sizing: border-box;
-  height: auto;
-  padding: 20px;
-  width: 50%;
+background-color: #15172b;
+border-radius: 20px;
+padding: 20px;
+box-sizing: border-box;
+width: 320px; /* Fixed width for consistency, adjust as needed */
+height: auto; /* Auto height to contain all fields */
 }
 
-form hr {
-  width: 15%;
-}
-
-h1 {
-  text-align: center;
-}
-
-#overlay {
-  width: 80%;
-  margin: 3% auto;
-  height: 95vh;
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 40px;
-}
-
-#logo {
-  height: 100px;
-  display: block;
-  margin: auto;
-}
-
-
-.toppings label, .cheesy label {
-  margin-right: 25px;
-}
-
-.form {
-  background-color: #15172b;
-  border-radius: 20px;
-  box-sizing: border-box;
-  height: 500px;
-  padding: 20px;
-  width: 320px;
+.title, .subtitle {
+color: #eee;
+text-align: center;
+font-weight: 600;
 }
 
 .title {
-  color: #eee;
-  font-family: sans-serif;
-  font-size: 36px;
-  font-weight: 600;
-  margin-top: 30px;
+font-size: 36px;
+margin-top: 30px;
 }
 
 .subtitle {
-  color: #eee;
-  font-family: sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  margin-top: 10px;
+font-size: 16px;
+margin-top: 10px;
 }
 
 .input-container {
-  height: 50px;
-  position: relative;
-  width: 100%;
+position: relative;
+width: 100%;
+margin-top: 30px; /* Adjusted spacing */
+}
+
+.input {
+background-color: #303245;
+border-radius: 12px;
+border: none;
+color: #eee;
+font-size: 18px;
+outline: none;
+padding: 4px 20px 0;
+width: 100%;
+box-sizing: border-box; /* Ensures padding doesn't affect overall width */
 }
 
 .ic1 {
@@ -94,127 +66,89 @@ h1 {
   margin-top: 30px;
 }
 
-.input {
-  background-color: #303245;
-  border-radius: 12px;
-  border: 0;
-  box-sizing: border-box;
-  color: #eee;
-  font-size: 18px;
-  height: 100%;
-  outline: 0;
-  padding: 4px 20px 0;
-  width: 100%;
+.cut, .cut-short {
+background-color: #15172b;
+border-radius: 10px;
+position: absolute;
+top: -20px;
+left: 20px;
+height: 20px;
+transition: transform 200ms;
 }
 
-.cut {
-  background-color: #15172b;
-  border-radius: 10px;
-  height: 20px;
-  left: 20px;
-  position: absolute;
-  top: -20px;
-  transform: translateY(0);
-  transition: transform 200ms;
-  width: 76px;
-}
+.cut { width: 76px; }
+.cut-short { width: 50px; }
 
-.cut-short {
-  width: 50px;
+.placeholder {
+position: absolute;
+left: 20px;
+top: 20px;
+color: #65657b;
+transition: transform 200ms, color 200ms;
+transform-origin: 0 50%;
 }
 
 .input:focus ~ .cut,
-.input:not(:placeholder-shown) ~ .cut {
-  transform: translateY(8px);
-}
-
-.placeholder {
-  color: #65657b;
-  font-family: sans-serif;
-  left: 20px;
-  line-height: 14px;
-  pointer-events: none;
-  position: absolute;
-  transform-origin: 0 50%;
-  transition: transform 200ms, color 200ms;
-  top: 20px;
+.input:not(:placeholder-shown) ~ .cut,
+.input:focus ~ .placeholder,
+.input:not(:placeholder-shown) ~ .placeholder {
+transform: translateY(8px);
 }
 
 .input:focus ~ .placeholder,
 .input:not(:placeholder-shown) ~ .placeholder {
-  transform: translateY(-30px) translateX(10px) scale(0.75);
-}
-
-.input:not(:placeholder-shown) ~ .placeholder {
-  color: #808097;
-}
-
-.input:focus ~ .placeholder {
-  color: #00FFB2;
+color: #00FFB2;
+transform: translateY(-30px) translateX(10px) scale(0.75);
 }
 
 .submit {
-  background-color: #08d;
-  border-radius: 12px;
-  border: 0;
-  box-sizing: border-box;
-  color: #eee;
-  cursor: pointer;
-  font-size: 18px;
-  height: 50px;
-  margin-top: 38px;
-  // outline: 0;
-  text-align: center;
-  width: 100%;
+background-color: #08d;
+border-radius: 12px;
+border: none;
+color: #eee;
+cursor: pointer;
+font-size: 18px;
+height: 50px;
+margin-top: 38px;
+width: 100%;
+transition: background-color 0.3s;
 }
 
 .submit:active {
-  background-color: #06b;
+background-color: #06b;
 }
 
-/* Tooltip container */
-.input-container {
-  position: relative;
-  display: inline-block;
-}
-
-/* Tooltip text */
+/* Tooltip styles */
 .tooltip {
-  visibility: hidden;
-  width: 120px;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-  
-  /* Position the tooltip text */
-  position: absolute;
-  z-index: 1;
-  bottom: 100%;
-  left: 50%;
-  margin-left: -60px;
-  
-  /* Fade in tooltip */
-  opacity: 0;
-  transition: opacity 0.3s;
+visibility: hidden;
+width: 120px;
+background-color: #555;
+color: #fff;
+text-align: center;
+border-radius: 6px;
+padding: 5px 0;
+position: absolute;
+z-index: 1;
+bottom: 100%;
+left: 50%;
+margin-left: -60px;
+opacity: 0;
+transition: opacity 0.3s;
 }
 
-/* Tooltip arrow */
 .tooltip::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #555 transparent transparent transparent;
+content: "";
+position: absolute;
+top: 100%;
+left: 50%;
+margin-left: -5px;
+border-width: 5px;
+border-style: solid;
+border-color: #555 transparent transparent transparent;
 }
 
-/* Show the tooltip text when you hover over the tooltip container */
 .input-container:hover .tooltip,
 .input-container:focus-within .tooltip {
-  visibility: visible;
-  opacity: 1;
+visibility: visible;
+opacity: 1;
 }
