@@ -3,9 +3,13 @@
 }
 
 body {
-  background-color: rgb(57, 169, 219);
-  font-family: Rubik, Arial;
+  align-items: center;
+  background-color: #08d;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
 }
+
 
 #quoteBlock {
   text-align: center;
